@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyJsonschema } from '@ngx-formly/core/json-schema';
-import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs/operators';
 
 @Component({
     selector: 'app-registration-form',
@@ -24,8 +22,7 @@ export class RegistrationFormComponent implements OnInit {
         'simple'
     ];
 
-    constructor(private formlyJsonschema: FormlyJsonschema,
-                private http: HttpClient
+    constructor(private formlyJsonschema: FormlyJsonschema
                 ) {
         this.loadJSON();
         this.loadExample(this.jsonData);
@@ -40,6 +37,7 @@ export class RegistrationFormComponent implements OnInit {
         this.options = {};
         this.fields = [this.formlyJsonschema.toFieldConfig(jsonData.schema)];
         this.model = jsonData.model;
+        // console.log(this.fields);
         // this.http.get<any>(`assets/json-forms/${type}.json`).pipe(
         //     tap(({ schema, model }) => {
         //         this.type = type;
