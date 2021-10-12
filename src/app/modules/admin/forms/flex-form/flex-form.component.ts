@@ -17,10 +17,6 @@ export class FlexFormComponent {
     fields = [this.formlyJsonschema.toFieldConfig({
         'title': 'Test',
         'type': 'object',
-        'required': [
-            'firstName',
-            'lastName'
-        ],
         'properties': {
             'firstname': {
                 'type': 'string',

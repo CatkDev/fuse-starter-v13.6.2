@@ -17,6 +17,7 @@ import { NullTypeComponent } from './null.type';
 import { MultiSchemaTypeComponent } from './multischema.type';
 import { ArrayTypeComponent } from './array.type';
 import { FlexFormComponent } from './flex-form/flex-form.component';
+import { JsonFormComponent } from './json-form/json-form.component';
 
 
 export function minItemsValidationMessage(err, field: FormlyFieldConfig) {
@@ -69,6 +70,7 @@ export function constValidationMessage(err, field: FormlyFieldConfig) {
         MultiSchemaTypeComponent,
         ArrayTypeComponent,
         FlexFormComponent,
+        JsonFormComponent,
     ],
     imports: [
         RouterModule.forChild(formsRoutes),
@@ -94,7 +96,7 @@ export function constValidationMessage(err, field: FormlyFieldConfig) {
                 { name: 'const', message: constValidationMessage },
             ],
             types: [
-                { name: 'stepper', component: FormlyFieldStepper, wrappers: [] },
+                { name: 'stepper', component: FormlyFieldStepper, wrappers: ['form-field'] },
                 { name: 'string', extends: 'input' },
                 {
                     name: 'number',
