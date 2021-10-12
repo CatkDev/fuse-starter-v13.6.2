@@ -68,7 +68,7 @@ export function constValidationMessage(err, field: FormlyFieldConfig) {
         NullTypeComponent,
         MultiSchemaTypeComponent,
         ArrayTypeComponent,
-        FlexFormComponent
+        FlexFormComponent,
     ],
     imports: [
         RouterModule.forChild(formsRoutes),

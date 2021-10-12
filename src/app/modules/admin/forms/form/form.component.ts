@@ -1,26 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
-import { FormlyJsonschema } from '@ngx-formly/core/json-schema';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {FormGroup} from '@angular/forms';
+import {FormlyFieldConfig, FormlyFormOptions} from '@ngx-formly/core';
+import {FormlyJsonschema} from '@ngx-formly/core/json-schema';
 
 
 @Component({
     selector: 'app-form',
     templateUrl: './form.component.html',
-    styleUrls: ['./form.component.scss']
+    styleUrls: ['./form.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class FormComponent implements OnInit {
 
     form = new FormGroup({});
     model: any = {};
     options: FormlyFormOptions = {};
+
     fields: FormlyFieldConfig[] = [{
         type: 'stepper',
         fieldGroup: [
             {
                 templateOptions: {label: 'Einrichtung anlegen'},
+                fieldGroupClassName: 'display-flex',
                 fieldGroup: [
                     {
+                        className: 'flex-1',
                         key: 'objectName',
                         type: 'input',
                         templateOptions: {
@@ -29,6 +33,7 @@ export class FormComponent implements OnInit {
                         },
                     },
                     {
+                        className: 'flex-1',
                         key: 'objectShort',
                         type: 'input',
                         templateOptions: {
@@ -37,6 +42,7 @@ export class FormComponent implements OnInit {
                         },
                     },
                     {
+                        className: 'flex-1',
                         key: 'objectId',
                         type: 'input',
                         templateOptions: {

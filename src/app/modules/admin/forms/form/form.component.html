@@ -4,7 +4,7 @@
     <div class="flex-auto p-6 sm:p-10">
 
         <!-- CONTENT GOES HERE -->
-        <div class="h-400 min-h-400 max-h-400 border-2 border-dashed border-gray-300 rounded-2xl">
+        <div class="h-400 min-h-400 max-h-400">
             <form [formGroup]="form" (ngSubmit)="submit()" >
                 <formly-form
                         [model]="model"
@@ -13,10 +13,14 @@
                         [form]="form">
                 </formly-form>
             </form>
+<!--            <br>-->
+<!--            <br>-->
+<!--            <br>-->
+<!--            <app-registration-form></app-registration-form>-->
             <br>
             <br>
             <br>
-            <app-registration-form></app-registration-form>
+            <app-flex-form></app-flex-form>
         </div>
 
 
