@@ -8,8 +8,8 @@ import { FormlyJsonschema } from '@ngx-formly/core/json-schema';
 
 @Component({
     selector: 'app-form',
-    templateUrl: './form/form.component.html',
-    styleUrls: ['./form/form.component.scss']
+    templateUrl: './form.component.html',
+    styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
 

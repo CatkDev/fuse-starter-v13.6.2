@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { SharedModule } from 'app/shared/shared.module';
-import { FormComponent } from './form.component';
+import { FormComponent } from './form/form.component';
 import { formsRoutes } from './forms.routing';
 import { FormlyModule } from '@ngx-formly/core';
 import { ReactiveFormsModule } from '@angular/forms';
