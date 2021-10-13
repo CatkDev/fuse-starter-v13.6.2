@@ -18,7 +18,7 @@ export class JsonFormComponent {
     options: FormlyFormOptions = {};
 
     fields = [this.formlyJsonschema.toFieldConfig({
-        'title': 'Test',
+        'title': 'formlyJsonschema',
         'type': 'object',
         'properties': {
             'firstname': {

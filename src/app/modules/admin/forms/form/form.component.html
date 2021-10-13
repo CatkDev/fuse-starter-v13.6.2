@@ -5,6 +5,7 @@
 
         <!-- CONTENT GOES HERE -->
         <div class="h-400 min-h-400 max-h-400">
+            <h2>Stepper</h2>
             <form [formGroup]="form" (ngSubmit)="submit()" >
                 <formly-form
                         [model]="model"
@@ -15,12 +16,18 @@
             </form>
             <br>
             <br>
+            <hr style="border: 1px solid red;">
+            <h2>loadJSON</h2>
             <app-registration-form></app-registration-form>
             <br>
             <br>
+            <hr style="border: 1px solid red;">
+            <h2>Class und Styles</h2>
             <app-flex-form></app-flex-form>
             <br>
             <br>
+            <hr style="border: 1px solid red;">
+            <h2>JSON</h2>
             <app-json-form></app-json-form>
         </div>
 
