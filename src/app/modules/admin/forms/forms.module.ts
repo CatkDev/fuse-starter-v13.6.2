@@ -79,6 +79,16 @@ export function constValidationMessage(err, field: FormlyFieldConfig) {
         SharedModule,
         FormlyModule,
         ReactiveFormsModule,
+        /*FormlyModule.forRoot({
+            validationMessages: [
+                { name: 'required', message: 'This field is required' },
+            ],
+            types: [
+                { name: 'string', extends: 'input' },
+                { name: 'stepper', component: FormlyFieldStepper, wrappers: ['form-field'] },
+                { name: 'object', component: ObjectTypeComponent },
+            ]
+        }),*/
         FormlyModule.forRoot({
             validationMessages: [
                 { name: 'required', message: 'Dieses Feld muss ausgefüllt werden'},
@@ -96,7 +106,7 @@ export function constValidationMessage(err, field: FormlyFieldConfig) {
                 { name: 'const', message: constValidationMessage },
             ],
             types: [
-                { name: 'stepper', component: FormlyFieldStepper, wrappers: ['form-field'] },
+                { name: 'stepper', component: FormlyFieldStepper, wrappers: [] },
                 { name: 'string', extends: 'input' },
                 {
                     name: 'number',
