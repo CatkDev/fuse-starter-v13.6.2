@@ -98,61 +98,83 @@ export class FormComponent implements OnInit {
         }
     }
 
-    loadForm(jsonData): any {
-        this.form = new FormGroup({});
-        this.options = {};
-        this.fields = [this.formlyJsonschema.toFieldConfig(jsonData.schema)];
-        this.model = jsonData.model;
-    }
+    // loadForm(jsonData): any {
+    //     this.form = new FormGroup({});
+    //     this.options = {};
+    //     this.fields = [this.formlyJsonschema.toFieldConfig(jsonData.schema)];
+    //     this.model = {};
+    // }
 
-    loadJSON(): any {
-        this.jsonData = {
-            schema: {
-                title: 'A registration form',
-                description: 'A simple form example.',
-                type: 'object',
-                required: [
-                    'firstName',
-                    'lastName'
-                ],
-                properties: {
-                    firstName: {
-                        type: 'string',
-                        title: 'First name',
-                        default: 'Chuck'
-                    },
-                    lastName: {
-                        type: 'string',
-                        title: 'Last name'
-                    },
-                    age: {
-                        type: 'integer',
-                        title: 'Age'
-                    },
-                    bio: {
-                        type: 'string',
-                        title: 'Bio'
-                    },
-                    password: {
-                        type: 'string',
-                        title: 'Password',
-                        minLength: 3
-                    },
-                    telephone: {
-                        type: 'string',
-                        title: 'Telephone',
-                        minLength: 10
-                    }
-                }
-            },
-            model: {
-                lastName: 'Norris',
-                age: 75,
-                bio: 'Roundhouse kicking asses since 1940',
-                password: 'noneed'
-            }
-        };
-    }
+    // loadJSON(): any {
+    //     this.jsonData = {
+    //         schema: {
+    //             'type': 'stepper',
+    //             'fieldGroup': [
+    //                 {
+    //                     'templateOptions': {'label': 'Einrichtung anlegen'},
+    //                     'fieldGroupClassName': 'display-flex',
+    //                     'fieldGroup': [
+    //                         {
+    //                             'className': 'flex-1',
+    //                             'key': 'objectName',
+    //                             'type': 'input',
+    //                             'templateOptions': {
+    //                                 'label': 'Name Einrichtung',
+    //                                 'required': true
+    //                             }
+    //                         },
+    //                         {
+    //                             'className': 'flex-1',
+    //                             'key': 'objectShort',
+    //                             'type': 'input',
+    //                             'templateOptions': {
+    //                                 'label': 'Kurzbezeichnung',
+    //                                 'required': false
+    //                             }
+    //                         },
+    //                         {
+    //                             'className': 'flex-1',
+    //                             'key': 'objectId',
+    //                             'type': 'input',
+    //                             'templateOptions': {
+    //                                 'type': 'number',
+    //                                 'label': 'Objektnummer',
+    //                                 'required': true
+    //                             }
+    //                         }
+    //                     ]
+    //                 },
+    //                 {
+    //                     'templateOptions': {'label': 'Lokalisierung'},
+    //                     'fieldGroup': [
+    //                         {
+    //                             'key': 'country',
+    //                             'type': 'input',
+    //                             'templateOptions': {
+    //                                 'label': 'Land',
+    //                                 'required': true
+    //                             }
+    //                         }
+    //                     ]
+    //                 },
+    //                 {
+    //                     'templateOptions': {'label': 'Tag der Reise'},
+    //                     'fieldGroup': [
+    //                         {
+    //                             'key': 'day',
+    //                             'type': 'input',
+    //                             'templateOptions': {
+    //                                 'type': 'date',
+    //                                 'label': 'Datum',
+    //                                 'required': true
+    //                             }
+    //                         }
+    //                     ]
+    //                 }
+    //             ]
+    //         }
+    //     };
+    // }
 
 }
 
