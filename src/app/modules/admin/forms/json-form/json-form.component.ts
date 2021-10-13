@@ -28,7 +28,7 @@ export class JsonFormComponent {
     ];
 
     constructor(private formlyJsonschema: FormlyJsonschema) {
-        this.loadJSON();
+        this.loadStepperJSON();
         this.loadStepper(this.jsonData);
     }
 
@@ -52,6 +52,77 @@ export class JsonFormComponent {
         this.options = {};
         this.fields = [this.formlyJsonschema.toFieldConfig(jsonData.schema)];
         this.model = {};
+    }
+
+    loadStepperJSON(): any {
+        this.jsonData = {
+            schema: {
+                type: 'stepper',
+                fieldGroup: [
+                    {
+                        templateOptions: {label: 'Einrichtung anlegen'},
+                        fieldGroupClassName: 'display-flex',
+                        fieldGroup: [
+                            {
+                                className: 'flex-1',
+                                key: 'objectName',
+                                type: 'input',
+                                templateOptions: {
+                                    label: 'Name Einrichtung',
+                                    required: true
+                                }
+                            },
+                            {
+                                className: 'flex-1',
+                                key: 'objectShort',
+                                type: 'input',
+                                templateOptions: {
+                                    label: 'Kurzbezeichnung',
+                                    required: false
+                                }
+                            },
+                            {
+                                className: 'flex-1',
+                                key: 'objectId',
+                                type: 'input',
+                                templateOptions: {
+                                    type: 'number',
+                                    label: 'Objektnummer',
+                                    required: true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        templateOptions: {label: 'Lokalisierung'},
+                        fieldGroup: [
+                            {
+                                key: 'country',
+                                type: 'input',
+                                templateOptions: {
+                                    label: 'Land',
+                                    required: true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        templateOptions: {label: 'Tag der Reise'},
+                        fieldGroup: [
+                            {
+                                key: 'day',
+                                type: 'input',
+                                templateOptions: {
+                                    type: 'date',
+                                    label: 'Datum',
+                                    required: true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        };
     }
 
     loadJSON(): any {
