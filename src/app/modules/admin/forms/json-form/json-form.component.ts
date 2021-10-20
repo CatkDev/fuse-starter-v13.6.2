@@ -2,11 +2,14 @@ import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyJsonschema } from '@ngx-formly/core/json-schema';
+import { HttpClient } from '@angular/common/http';
+import { tap } from 'rxjs/operators';
 
-// export interface StepType {
-//     label: string;
-//     fields: FormlyFieldConfig[];
-// }
+export interface StepType {
+    label: string;
+    fields: FormlyFieldConfig[];
+}
+
 @Component({
   selector: 'app-json-form',
   templateUrl: './json-form.component.html',
@@ -21,37 +24,115 @@ export class JsonFormComponent {
 
     jsonData: any = {};
 
-    type: string;
+    constructor(private formlyJsonschema: FormlyJsonschema,
+                private http: HttpClient) {
+        //this.loadStepperJSON();
+        this.jsonData = this.loadExample();
+        // this.jsonData = {
+        //     schema: {
+        //         type: 'stepper',
+        //         fieldGroup: [
+        //             // step 1
+        //             {
+        //                 templateOptions: { label: 'Step 1' },
+        //                 fieldGroup: [
+        //                     {
+        //                         key: 'firstname',
+        //                         type: 'input',
+        //                         templateOptions: {
+        //                             label: 'First name',
+        //                             required: true
+        //                         }
+        //                     },
+        //                     {
+        //                         key: 'age',
+        //                         type: 'input',
+        //                         templateOptions: {
+        //                             type: 'number',
+        //                             label: 'Age',
+        //                             required: true
+        //                         }
+        //                     }
+        //                 ]
+        //             },
+        //             // step 2
+        //             {
+        //                 templateOptions: { label: 'Step 2' },
+        //                 fieldGroup: [
+        //                     {
+        //                         key: 'country',
+        //                         type: 'input',
+        //                         templateOptions: {
+        //                             label: 'Country',
+        //                             required: true
+        //                         }
+        //                     }
+        //                 ]
+        //             },
+        //             // step 3
+        //             {
+        //                 templateOptions: { label: 'Step 3' },
+        //                 fieldGroup: [
+        //                     {
+        //                         key: 'day',
+        //                         type: 'input',
+        //                         templateOptions: {
+        //                             label: 'Day of the trip',
+        //                             required: true
+        //                         }
+        //                     }
+        //                 ]
+        //             }
+        //         ]
+        //     }
+        // };
+        console.log(this.jsonData);
+        // this.loadTestJSON();
+        // this.loadJSON();
+        //this.loadStepper(this.jsonData);
 
-    forms = [
-        'stepper'
-    ];
-
-    constructor(private formlyJsonschema: FormlyJsonschema) {
-        this.loadStepperJSON();
-        this.loadStepper(this.jsonData);
+        this.jsonData = [this.jsonData];
+        this.fields = this.jsonData;
+        // this.fields = this.jsonData.schema;
     }
-
-    // fields = [this.formlyJsonschema.toFieldConfig({
-    //     'title': 'formlyJsonschema',
-    //     'type': 'object',
-    //     'properties': {
-    //         'firstname': {
-    //             'type': 'string',
-    //             'title': 'First name'
-    //         },
-    //         'lastname': {
-    //             'type': 'string',
-    //             'title': 'Last name'
-    //         }
-    //     }
-    // })];
 
     loadStepper(jsonData): any {
         this.form = new FormGroup({});
         this.options = {};
         this.fields = [this.formlyJsonschema.toFieldConfig(jsonData.schema)];
         this.model = {};
+        console.log(jsonData.schema);
+        console.log(this.jsonData.schema);
+    }
+
+    loadExample(): any {
+        return this.http.get('assets/json-schema/stepperForm.json');
+    }
+
+    loadTestJSON(): any {
+        this.jsonData = {
+            schema: {
+                type: 'stepper',
+                fieldGroup: [
+                    // step 1
+                    {
+                        key: 'Step1',
+                        templateOptions: { label: 'Step 1' },
+                        fieldGroup: [
+                            {
+                                key: 'input',
+                                type: 'input',
+                                templateOptions: {
+                                    label: 'Input',
+                                    placeholder: 'Input placeholder',
+                                    required: true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        };
     }
 
     loadStepperJSON(): any {
@@ -59,62 +140,52 @@ export class JsonFormComponent {
             schema: {
                 type: 'stepper',
                 fieldGroup: [
+                    // step 1
                     {
-                        templateOptions: {label: 'Einrichtung anlegen'},
-                        fieldGroupClassName: 'display-flex',
+                        templateOptions: { label: 'Step 1' },
                         fieldGroup: [
                             {
-                                className: 'flex-1',
-                                key: 'objectName',
+                                key: 'firstname',
                                 type: 'input',
                                 templateOptions: {
-                                    label: 'Name Einrichtung',
+                                    label: 'First name',
                                     required: true
                                 }
                             },
                             {
-                                className: 'flex-1',
-                                key: 'objectShort',
-                                type: 'input',
-                                templateOptions: {
-                                    label: 'Kurzbezeichnung',
-                                    required: false
-                                }
-                            },
-                            {
-                                className: 'flex-1',
-                                key: 'objectId',
+                                key: 'age',
                                 type: 'input',
                                 templateOptions: {
                                     type: 'number',
-                                    label: 'Objektnummer',
+                                    label: 'Age',
                                     required: true
                                 }
                             }
                         ]
                     },
+                    // step 2
                     {
-                        templateOptions: {label: 'Lokalisierung'},
+                        templateOptions: { label: 'Step 2' },
                         fieldGroup: [
                             {
                                 key: 'country',
                                 type: 'input',
                                 templateOptions: {
-                                    label: 'Land',
+                                    label: 'Country',
                                     required: true
                                 }
                             }
                         ]
                     },
+                    // step 3
                     {
-                        templateOptions: {label: 'Tag der Reise'},
+                        templateOptions: { label: 'Step 3' },
                         fieldGroup: [
                             {
                                 key: 'day',
                                 type: 'input',
                                 templateOptions: {
-                                    type: 'date',
-                                    label: 'Datum',
+                                    label: 'Day of the trip',
                                     required: true
                                 }
                             }

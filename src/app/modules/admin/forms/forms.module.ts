@@ -79,61 +79,67 @@ export function constValidationMessage(err, field: FormlyFieldConfig) {
         SharedModule,
         FormlyModule,
         ReactiveFormsModule,
-        /*FormlyModule.forRoot({
+        FormlyModule.forRoot({
             validationMessages: [
                 { name: 'required', message: 'This field is required' },
             ],
             types: [
-                { name: 'string', extends: 'input' },
-                { name: 'stepper', component: FormlyFieldStepper, wrappers: ['form-field'] },
-                { name: 'object', component: ObjectTypeComponent },
-            ]
-        }),*/
-        FormlyModule.forRoot({
-            validationMessages: [
-                { name: 'required', message: 'Dieses Feld muss ausgefüllt werden'},
-                { name: 'null', message: 'should be null' },
-                { name: 'minlength', message: minlengthValidationMessage },
-                { name: 'maxlength', message: maxlengthValidationMessage },
-                { name: 'min', message: minValidationMessage },
-                { name: 'max', message: maxValidationMessage },
-                { name: 'multipleOf', message: multipleOfValidationMessage },
-                { name: 'exclusiveMinimum', message: exclusiveMinimumValidationMessage },
-                { name: 'exclusiveMaximum', message: exclusiveMaximumValidationMessage },
-                { name: 'minItems', message: minItemsValidationMessage },
-                { name: 'maxItems', message: maxItemsValidationMessage },
-                { name: 'uniqueItems', message: 'should NOT have duplicate items' },
-                { name: 'const', message: constValidationMessage },
-            ],
-            types: [
                 { name: 'stepper', component: FormlyFieldStepper, wrappers: [] },
-                { name: 'string', extends: 'input' },
-                {
-                    name: 'number',
-                    extends: 'input',
-                    defaultOptions: {
-                        templateOptions: {
-                            type: 'number',
-                        },
-                    },
-                },
-                {
-                    name: 'integer',
-                    extends: 'input',
-                    defaultOptions: {
-                        templateOptions: {
-                            type: 'number',
-                        },
-                    },
-                },
-                { name: 'boolean', extends: 'checkbox' },
-                { name: 'enum', extends: 'select' },
-                { name: 'null', component: NullTypeComponent, wrappers: ['form-field'] },
-                { name: 'array', component: ArrayTypeComponent },
-                { name: 'object', component: ObjectTypeComponent },
-                { name: 'multischema', component: MultiSchemaTypeComponent },
-            ],
+            ]
         }),
+        // FormlyModule.forRoot({
+        //     validationMessages: [
+        //         { name: 'required', message: 'This field is required' },
+        //     ],
+        //     types: [
+        //         { name: 'stepper', component: FormlyFieldStepper, wrappers: ['form-field'] },
+        //     ]
+        // }),
+        // FormlyModule.forRoot({
+        //     validationMessages: [
+        //         { name: 'required', message: 'Dieses Feld muss ausgefüllt werden'},
+        //         { name: 'null', message: 'should be null' },
+        //         { name: 'minlength', message: minlengthValidationMessage },
+        //         { name: 'maxlength', message: maxlengthValidationMessage },
+        //         { name: 'min', message: minValidationMessage },
+        //         { name: 'max', message: maxValidationMessage },
+        //         { name: 'multipleOf', message: multipleOfValidationMessage },
+        //         { name: 'exclusiveMinimum', message: exclusiveMinimumValidationMessage },
+        //         { name: 'exclusiveMaximum', message: exclusiveMaximumValidationMessage },
+        //         { name: 'minItems', message: minItemsValidationMessage },
+        //         { name: 'maxItems', message: maxItemsValidationMessage },
+        //         { name: 'uniqueItems', message: 'should NOT have duplicate items' },
+        //         { name: 'const', message: constValidationMessage },
+        //     ],
+        //     types: [
+        //         { name: 'stepper', component: FormlyFieldStepper, wrappers: [] },
+        //         { name: 'string', extends: 'input' },
+        //         {
+        //             name: 'number',
+        //             extends: 'input',
+        //             defaultOptions: {
+        //                 templateOptions: {
+        //                     type: 'number',
+        //                 },
+        //             },
+        //         },
+        //         {
+        //             name: 'integer',
+        //             extends: 'input',
+        //             defaultOptions: {
+        //                 templateOptions: {
+        //                     type: 'number',
+        //                 },
+        //             },
+        //         },
+        //         { name: 'boolean', extends: 'checkbox' },
+        //         { name: 'enum', extends: 'select' },
+        //         { name: 'null', component: NullTypeComponent, wrappers: ['form-field'] },
+        //         { name: 'array', component: ArrayTypeComponent },
+        //         { name: 'object', component: ObjectTypeComponent },
+        //         { name: 'multischema', component: MultiSchemaTypeComponent },
+        //     ],
+        // }),
         FormlyMaterialModule,
         MatStepperModule
     ]
