@@ -17,9 +17,9 @@ export interface StepType {
 })
 export class JsonFormComponent {
 
-    form: FormGroup;
-    model: any;
-    options: FormlyFormOptions;
+    form = new FormGroup({});
+    options = {};
+    model: any = {};
     fields: FormlyFieldConfig[];
 
     jsonData: any = {};
@@ -27,7 +27,7 @@ export class JsonFormComponent {
     constructor(private formlyJsonschema: FormlyJsonschema,
                 private http: HttpClient) {
         //this.loadStepperJSON();
-        this.jsonData = this.loadExample();
+        // this.jsonData = this.loadExample();
         // this.jsonData = {
         //     schema: {
         //         type: 'stepper',
@@ -86,13 +86,13 @@ export class JsonFormComponent {
         //         ]
         //     }
         // };
-        console.log(this.jsonData);
+
         // this.loadTestJSON();
         // this.loadJSON();
         //this.loadStepper(this.jsonData);
-
-        this.jsonData = [this.jsonData];
-        this.fields = this.jsonData;
+        this.loadExample();
+        // this.jsonData = [this.jsonData];
+        // this.fields = this.jsonData;
         // this.fields = this.jsonData.schema;
     }
 
@@ -106,7 +106,12 @@ export class JsonFormComponent {
     }
 
     loadExample(): any {
-        return this.http.get('assets/json-schema/stepperForm.json');
+        this.jsonData = this.http.get<any>('assets/json-schema/stepperForm.json').subscribe((data) => {
+            this.fields = [data];
+
+            // this.fields = [this.formlyJsonschema.toFieldConfig(data)];
+            console.log(data);
+        });
     }
 
     loadTestJSON(): any {

@@ -1,38 +1,59 @@
-  {
-      "title": "A registration form",
-      "description": "A simple form example.",
-      "type": "object",
-      "required": [
-        "firstName",
-        "lastName"
-      ],
-      "properties": {
-        "firstName": {
-          "type": "string",
-          "title": "First name",
-          "default": "Chuck"
+{
+  "type": "stepper",
+  "fieldGroup": [
+    {
+      "templateOptions": {
+        "label": "Step 1"
+      },
+      "fieldGroup": [
+        {
+          "key": "firstname",
+          "type": "input",
+          "templateOptions": {
+            "label": "First name",
+            "required": true
+          }
         },
-        "lastName": {
-          "type": "string",
-          "title": "Last name"
-        },
-        "age": {
-          "type": "integer",
-          "title": "Age"
-        },
-        "bio": {
-          "type": "string",
-          "title": "Bio"
-        },
-        "password": {
-          "type": "string",
-          "title": "Password",
-          "minLength": 3
-        },
-        "telephone": {
-          "type": "string",
-          "title": "Telephone",
-          "minLength": 10
+        {
+          "key": "age",
+          "type": "input",
+          "templateOptions": {
+            "type": "number",
+            "label": "Age",
+            "required": true
+          }
         }
-      }
+      ]
+    },
+    {
+      "templateOptions": {
+        "label": "Step 2"
+      },
+      "fieldGroup": [
+        {
+          "key": "country",
+          "type": "input",
+          "templateOptions": {
+            "label": "Country",
+            "required": true
+          }
+        }
+      ]
+    },
+    {
+      "templateOptions": {
+        "label": "Step 3"
+      },
+      "fieldGroup": [
+        {
+          "key": "day",
+          "type": "input",
+          "templateOptions": {
+            "label": "Day of the trip",
+            "required": true
+          }
+        }
+      ]
     }
+  ]
+}
