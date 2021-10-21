@@ -3,10 +3,12 @@
   "fieldGroup": [
     {
       "templateOptions": {
-        "label": "Step 1"
+        "label": "Einrichtung anlegen"
       },
+      "fieldGroupClassName": "display-flex",
       "fieldGroup": [
         {
+          "className": "flex-2",
           "key": "firstname",
           "type": "input",
           "templateOptions": {
@@ -15,6 +17,17 @@
           }
         },
         {
+          "className": "flex-1",
+          "key": "age",
+          "type": "input",
+          "templateOptions": {
+            "type": "number",
+            "label": "Age",
+            "required": true
+          }
+        },
+        {
+          "className": "flex-1",
           "key": "age",
           "type": "input",
           "templateOptions": {
@@ -27,7 +40,7 @@
     },
     {
       "templateOptions": {
-        "label": "Step 2"
+        "label": "Bestellen"
       },
       "fieldGroup": [
         {
@@ -42,7 +55,37 @@
     },
     {
       "templateOptions": {
-        "label": "Step 3"
+        "label": "Hauptanschrift"
+      },
+      "fieldGroup": [
+        {
+          "key": "day",
+          "type": "input",
+          "templateOptions": {
+            "label": "Day of the trip",
+            "required": true
+          }
+        }
+      ]
+    },
+    {
+      "templateOptions": {
+        "label": "Rechnungsanschrift"
+      },
+      "fieldGroup": [
+        {
+          "key": "day",
+          "type": "input",
+          "templateOptions": {
+            "label": "Day of the trip",
+            "required": true
+          }
+        }
+      ]
+    },
+    {
+      "templateOptions": {
+        "label": "Gruppe / Klasse"
       },
       "fieldGroup": [
         {

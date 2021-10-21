@@ -96,14 +96,14 @@ export class JsonFormComponent {
         // this.fields = this.jsonData.schema;
     }
 
-    loadStepper(jsonData): any {
-        this.form = new FormGroup({});
-        this.options = {};
-        this.fields = [this.formlyJsonschema.toFieldConfig(jsonData.schema)];
-        this.model = {};
-        console.log(jsonData.schema);
-        console.log(this.jsonData.schema);
-    }
+    // loadStepper(jsonData): any {
+    //     this.form = new FormGroup({});
+    //     this.options = {};
+    //     this.fields = [this.formlyJsonschema.toFieldConfig(jsonData.schema)];
+    //     this.model = {};
+    //     console.log(jsonData.schema);
+    //     console.log(this.jsonData.schema);
+    // }
 
     loadExample(): any {
         this.jsonData = this.http.get<any>('assets/json-schema/stepperForm.json').subscribe((data) => {
@@ -114,188 +114,188 @@ export class JsonFormComponent {
         });
     }
 
-    loadTestJSON(): any {
-        this.jsonData = {
-            schema: {
-                type: 'stepper',
-                fieldGroup: [
-                    // step 1
-                    {
-                        key: 'Step1',
-                        templateOptions: { label: 'Step 1' },
-                        fieldGroup: [
-                            {
-                                key: 'input',
-                                type: 'input',
-                                templateOptions: {
-                                    label: 'Input',
-                                    placeholder: 'Input placeholder',
-                                    required: true
-                                }
-                            }
-                        ]
-                    }
-                ]
-            }
-        };
-    }
+    // loadTestJSON(): any {
+    //     this.jsonData = {
+    //         schema: {
+    //             type: 'stepper',
+    //             fieldGroup: [
+    //                 // step 1
+    //                 {
+    //                     key: 'Step1',
+    //                     templateOptions: { label: 'Step 1' },
+    //                     fieldGroup: [
+    //                         {
+    //                             key: 'input',
+    //                             type: 'input',
+    //                             templateOptions: {
+    //                                 label: 'Input',
+    //                                 placeholder: 'Input placeholder',
+    //                                 required: true
+    //                             }
+    //                         }
+    //                     ]
+    //                 }
+    //             ]
+    //         }
+    //     };
+    // }
 
-    loadStepperJSON(): any {
-        this.jsonData = {
-            schema: {
-                type: 'stepper',
-                fieldGroup: [
-                    // step 1
-                    {
-                        templateOptions: { label: 'Step 1' },
-                        fieldGroup: [
-                            {
-                                key: 'firstname',
-                                type: 'input',
-                                templateOptions: {
-                                    label: 'First name',
-                                    required: true
-                                }
-                            },
-                            {
-                                key: 'age',
-                                type: 'input',
-                                templateOptions: {
-                                    type: 'number',
-                                    label: 'Age',
-                                    required: true
-                                }
-                            }
-                        ]
-                    },
-                    // step 2
-                    {
-                        templateOptions: { label: 'Step 2' },
-                        fieldGroup: [
-                            {
-                                key: 'country',
-                                type: 'input',
-                                templateOptions: {
-                                    label: 'Country',
-                                    required: true
-                                }
-                            }
-                        ]
-                    },
-                    // step 3
-                    {
-                        templateOptions: { label: 'Step 3' },
-                        fieldGroup: [
-                            {
-                                key: 'day',
-                                type: 'input',
-                                templateOptions: {
-                                    label: 'Day of the trip',
-                                    required: true
-                                }
-                            }
-                        ]
-                    }
-                ]
-            }
-        };
-    }
+    // loadStepperJSON(): any {
+    //     this.jsonData = {
+    //         schema: {
+    //             type: 'stepper',
+    //             fieldGroup: [
+    //                 // step 1
+    //                 {
+    //                     templateOptions: { label: 'Step 1' },
+    //                     fieldGroup: [
+    //                         {
+    //                             key: 'firstname',
+    //                             type: 'input',
+    //                             templateOptions: {
+    //                                 label: 'First name',
+    //                                 required: true
+    //                             }
+    //                         },
+    //                         {
+    //                             key: 'age',
+    //                             type: 'input',
+    //                             templateOptions: {
+    //                                 type: 'number',
+    //                                 label: 'Age',
+    //                                 required: true
+    //                             }
+    //                         }
+    //                     ]
+    //                 },
+    //                 // step 2
+    //                 {
+    //                     templateOptions: { label: 'Step 2' },
+    //                     fieldGroup: [
+    //                         {
+    //                             key: 'country',
+    //                             type: 'input',
+    //                             templateOptions: {
+    //                                 label: 'Country',
+    //                                 required: true
+    //                             }
+    //                         }
+    //                     ]
+    //                 },
+    //                 // step 3
+    //                 {
+    //                     templateOptions: { label: 'Step 3' },
+    //                     fieldGroup: [
+    //                         {
+    //                             key: 'day',
+    //                             type: 'input',
+    //                             templateOptions: {
+    //                                 label: 'Day of the trip',
+    //                                 required: true
+    //                             }
+    //                         }
+    //                     ]
+    //                 }
+    //             ]
+    //         }
+    //     };
+    // }
 
-    loadJSON(): any {
-        this.jsonData = {
-            schema: {
-                title: 'Stepper Form',
-                type: 'object',
-                widget: { formlyConfig: { type: 'stepper'} },
-                properties: {
-                    step1: {
-                        title: 'Einrichtung anlegen',
-                        type: 'object',
-                        properties: {
-                            firstname: {
-                                type: 'textarea',
-                                title: 'First Name',
-                                widget: {
-                                    formlyConfig: {
-                                        templateOptions: {
-                                            maxWordCount: 1,
-                                            rows: 5
-                                        }
-                                    }
-                                }
-                            },
-                            id: {
-                                $id: '#/properties/ip',
-                                type: 'string',
-                                title: 'Ip',
-                                default: '',
-                                example: [
-                                    '111.123.789.654'
-                                ],
-                                pattern: '^(\\\\d{1,3}\\\\.){3}\\\\d{1,3}$',
-                                widget: {
-                                    formlyConfig: {
-                                        validation: {
-                                            messages: {
-                                                pattern: 'test'
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    step2: {
-                        title: 'Bestellen',
-                        type: 'object',
-                        properties: {
-                            firstname: {
-                                type: 'textarea',
-                                title: 'First Name',
-                                widget: {
-                                    formlyConfig: {
-                                        templateOptions: {
-                                            maxWordCount: 1,
-                                            rows: 5
-                                        }
-                                    }
-                                }
-                            },
-                            id: {
-                                $id: '#/properties/ip',
-                                type: 'string',
-                                title: 'Ip',
-                                default: '',
-                                example: [
-                                    '111.123.789.654'
-                                ],
-                                pattern: '^(\\\\d{1,3}\\\\.){3}\\\\d{1,3}$',
-                                widget: {
-                                    formlyConfig: {
-                                        validation: {
-                                            messages: {
-                                                pattern: 'test'
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    step3: {
-                        title: 'step 3',
-                        type: 'object',
-                        properties: {
-                            lastname: {
-                                type: 'string',
-                                title: 'Last name'
-                            }
-                        }
-                    }
-                }
-            }
-        };
-    }
+    // loadJSON(): any {
+    //     this.jsonData = {
+    //         schema: {
+    //             title: 'Stepper Form',
+    //             type: 'object',
+    //             widget: { formlyConfig: { type: 'stepper'} },
+    //             properties: {
+    //                 step1: {
+    //                     title: 'Einrichtung anlegen',
+    //                     type: 'object',
+    //                     properties: {
+    //                         firstname: {
+    //                             type: 'textarea',
+    //                             title: 'First Name',
+    //                             widget: {
+    //                                 formlyConfig: {
+    //                                     templateOptions: {
+    //                                         maxWordCount: 1,
+    //                                         rows: 5
+    //                                     }
+    //                                 }
+    //                             }
+    //                         },
+    //                         id: {
+    //                             $id: '#/properties/ip',
+    //                             type: 'string',
+    //                             title: 'Ip',
+    //                             default: '',
+    //                             example: [
+    //                                 '111.123.789.654'
+    //                             ],
+    //                             pattern: '^(\\\\d{1,3}\\\\.){3}\\\\d{1,3}$',
+    //                             widget: {
+    //                                 formlyConfig: {
+    //                                     validation: {
+    //                                         messages: {
+    //                                             pattern: 'test'
+    //                                         }
+    //                                     }
+    //                                 }
+    //                             }
+    //                         }
+    //                     }
+    //                 },
+    //                 step2: {
+    //                     title: 'Bestellen',
+    //                     type: 'object',
+    //                     properties: {
+    //                         firstname: {
+    //                             type: 'textarea',
+    //                             title: 'First Name',
+    //                             widget: {
+    //                                 formlyConfig: {
+    //                                     templateOptions: {
+    //                                         maxWordCount: 1,
+    //                                         rows: 5
+    //                                     }
+    //                                 }
+    //                             }
+    //                         },
+    //                         id: {
+    //                             $id: '#/properties/ip',
+    //                             type: 'string',
+    //                             title: 'Ip',
+    //                             default: '',
+    //                             example: [
+    //                                 '111.123.789.654'
+    //                             ],
+    //                             pattern: '^(\\\\d{1,3}\\\\.){3}\\\\d{1,3}$',
+    //                             widget: {
+    //                                 formlyConfig: {
+    //                                     validation: {
+    //                                         messages: {
+    //                                             pattern: 'test'
+    //                                         }
+    //                                     }
+    //                                 }
+    //                             }
+    //                         }
+    //                     }
+    //                 },
+    //                 step3: {
+    //                     title: 'step 3',
+    //                     type: 'object',
+    //                     properties: {
+    //                         lastname: {
+    //                             type: 'string',
+    //                             title: 'Last name'
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     };
+    // }
 
     submit(): any {
         alert(JSON.stringify(this.model));
