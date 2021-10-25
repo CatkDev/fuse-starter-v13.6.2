@@ -5,10 +5,10 @@
             "templateOptions": {
                 "label": "Einrichtung anlegen"
             },
-            "fieldGroupClassName": "display-flex",
+            "fieldGroupClassName": "",
             "fieldGroup": [
                 {
-                    "className": "flex-1",
+                    "className": "",
                     "key": "objects",
                     "type": "select",
                     "templateOptions": {
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "className": "flex-1",
+                    "className": "",
                     "key": "order",
                     "type": "select",
                     "templateOptions": {
@@ -68,32 +68,52 @@
                     }
                 },
                 {
-                    "className": "flex-1",
-                    "key": "firstname",
+                    "className": "",
+                    "key": "objectName",
                     "type": "input",
                     "templateOptions": {
-                        "label": "First name",
+                        "label": "Name Einrichtung",
                         "required": true
                     }
                 },
                 {
-                    "className": "flex-1",
-                    "key": "age",
+                    "className": "",
+                    "key": "shortObjectName",
                     "type": "input",
                     "templateOptions": {
-                        "type": "number",
-                        "label": "Age",
+                        "label": "Kurzbezeichnung"
+                    }
+                },
+                {
+                    "className": "",
+                    "key": "objectNumber",
+                    "type": "input",
+                    "templateOptions": {
+                        "type": "string",
+                        "label": "Objektnummer",
                         "required": true
                     }
                 },
                 {
-                    "className": "flex-1",
-                    "key": "age4",
-                    "type": "input",
+                    "className": "",
+                    "key": "order",
+                    "type": "select",
                     "templateOptions": {
-                        "type": "number",
-                        "label": "Age",
-                        "required": true
+                        "label": "Bundesland",
+                        "options": [
+                            {
+                                "label": "Berlin",
+                                "value": "BE"
+                            },
+                            {
+                                "label": "Brandenburg",
+                                "value": "BB"
+                            },
+                            {
+                                "label": "Hamburg",
+                                "value": "HH"
+                            }
+                        ]
                     }
                 }
             ]
@@ -104,40 +124,180 @@
             },
             "fieldGroup": [
                 {
-                    "key": "country",
-                    "type": "input",
+                    "className": "",
+                    "key": "order",
+                    "type": "select",
                     "templateOptions": {
-                        "label": "Country",
-                        "required": true
+                        "label": "Produktlinie",
+                        "options": [
+                            {
+                                "label": "Mittag",
+                                "value": "lunch"
+                            },
+                            {
+                                "label": "Milch",
+                                "value": "milk"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "className": "",
+                    "key": "order",
+                    "type": "select",
+                    "templateOptions": {
+                        "label": "Auswahltyp",
+                        "options": [
+                            {
+                                "label": "Standard",
+                                "value": "STD"
+                            },
+                            {
+                                "label": "Vorauswahl durch Einrichtung",
+                                "value": "VDE"
+                            },
+                            {
+                                "label": "Auswahl vor Ort",
+                                "value": "AVO"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "className": "",
+                    "key": "lines",
+                    "type": "multicheckbox",
+                    "templateOptions": {
+                        "label": "Menülinie",
+                        "options": [
+                            {
+                                "value": "M1",
+                                "label": "M1"
+                            },
+                            {
+                                "value": "M2",
+                                "label": "M2"
+                            },
+                            {
+                                "value": "M12",
+                                "label": "M12"
+                            },
+                            {
+                                "value": "M13",
+                                "label": "M13"
+                            },
+                            {
+                                "value": "M15",
+                                "label": "M15"
+                            }
+                        ]
                     }
                 }
             ]
         },
         {
             "templateOptions": {
-                "label": "Hauptanschrift"
+                "label": "Hauptanschrift / Lieferanschrift"
             },
             "fieldGroup": [
                 {
-                    "key": "day",
+                    "className": "",
+                    "key": "addressLineOne",
                     "type": "input",
                     "templateOptions": {
-                        "label": "Day of the trip",
+                        "label": "1. Addresszeile"
+                    }
+                },
+                {
+                    "className": "",
+                    "key": "addressLineTwo",
+                    "type": "input",
+                    "templateOptions": {
+                        "label": "2. Addresszeile"
+                    }
+                },
+                {
+                    "className": "",
+                    "key": "streetAndNumber",
+                    "type": "input",
+                    "templateOptions": {
+                        "label": "Straße und Nr.",
                         "required": true
+                    }
+                },
+                {
+                    "className": "",
+                    "key": "plz",
+                    "type": "input",
+                    "templateOptions": {
+                        "label": "Postleitzahl",
+                        "required": true
+                    }
+                },
+                {
+                    "className": "",
+                    "key": "city",
+                    "type": "input",
+                    "templateOptions": {
+                        "label": "Stadt",
+                        "required": true
+                    }
+                },
+                {
+                    "className": "",
+                    "key": "lines",
+                    "type": "checkbox",
+                    "templateOptions": {
+                        "label": "Rechnungsanschrift ist Hauptanschrift"
                     }
                 }
             ]
         },
         {
             "templateOptions": {
-                "label": "Rechnungsanschrift"
+                "label": "Rechungsanschrift"
             },
             "fieldGroup": [
                 {
-                    "key": "day",
+                    "className": "",
+                    "key": "addressLineOne",
                     "type": "input",
                     "templateOptions": {
-                        "label": "Day of the trip",
+                        "label": "1. Addresszeile"
+                    }
+                },
+                {
+                    "className": "",
+                    "key": "addressLineTwo",
+                    "type": "input",
+                    "templateOptions": {
+                        "label": "2. Addresszeile"
+                    }
+                },
+                {
+                    "className": "",
+                    "key": "streetAndNumber",
+                    "type": "input",
+                    "templateOptions": {
+                        "label": "Straße und Nr.",
+                        "required": true
+                    }
+                },
+                {
+                    "className": "",
+                    "key": "plz",
+                    "type": "input",
+                    "templateOptions": {
+                        "label": "Postleitzahl",
+                        "required": true
+                    }
+                },
+                {
+                    "className": "",
+                    "key": "city",
+                    "type": "input",
+                    "templateOptions": {
+                        "label": "Stadt",
                         "required": true
                     }
                 }
@@ -149,11 +309,27 @@
             },
             "fieldGroup": [
                 {
-                    "key": "day",
+                    "className": "",
+                    "key": "groupname",
                     "type": "input",
                     "templateOptions": {
-                        "label": "Day of the trip",
-                        "required": true
+                        "label": "Name"
+                    }
+                },
+                {
+                    "className": "",
+                    "key": "shortGroupName",
+                    "type": "input",
+                    "templateOptions": {
+                        "label": "Kurzbezeichnung"
+                    }
+                },
+                {
+                    "className": "",
+                    "key": "groupNumber",
+                    "type": "input",
+                    "templateOptions": {
+                        "label": "Nummer"
                     }
                 }
             ]
