@@ -24,7 +24,7 @@ export class FormComponent implements OnInit {
                 fieldGroupClassName: 'display-flex',
                 fieldGroup: [
                     {
-                        className: 'flex-1',
+                        className: 'flex-2',
                         key: 'objectName',
                         type: 'input',
                         templateOptions: {

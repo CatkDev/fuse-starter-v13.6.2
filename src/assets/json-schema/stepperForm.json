@@ -1,102 +1,162 @@
 {
-  "type": "stepper",
-  "fieldGroup": [
-    {
-      "templateOptions": {
-        "label": "Einrichtung anlegen"
-      },
-      "fieldGroupClassName": "display-flex",
-      "fieldGroup": [
+    "type": "stepper",
+    "fieldGroup": [
         {
-          "className": "flex-2",
-          "key": "firstname",
-          "type": "input",
-          "templateOptions": {
-            "label": "First name",
-            "required": true
-          }
+            "templateOptions": {
+                "label": "Einrichtung anlegen"
+            },
+            "fieldGroupClassName": "display-flex",
+            "fieldGroup": [
+                {
+                    "className": "flex-1",
+                    "key": "objects",
+                    "type": "select",
+                    "templateOptions": {
+                        "label": "Eirichtungstyp",
+                        "options": [
+                            {
+                                "label": "Schule 1",
+                                "value": "objectId1"
+                            },
+                            {
+                                "label": "Schule 2",
+                                "value": "objectId2"
+                            },
+                            {
+                                "label": "Schule 3",
+                                "value": "objectId3"
+                            },
+                            {
+                                "label": "Schule 4",
+                                "value": "objectId4"
+                            },
+                            {
+                                "label": "Schule 5",
+                                "value": "objectId5"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "className": "flex-1",
+                    "key": "order",
+                    "type": "select",
+                    "templateOptions": {
+                        "label": "Bestellmodus",
+                        "options": [
+                            {
+                                "label": "Kunde 1",
+                                "value": "customerId1"
+                            },
+                            {
+                                "label": "Kunde 2",
+                                "value": "customerId2"
+                            },
+                            {
+                                "label": "Kunde 3",
+                                "value": "customerId3"
+                            },
+                            {
+                                "label": "Kunde 4",
+                                "value": "customerId4"
+                            },
+                            {
+                                "label": "Kunde 5",
+                                "value": "customerId5"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "className": "flex-1",
+                    "key": "firstname",
+                    "type": "input",
+                    "templateOptions": {
+                        "label": "First name",
+                        "required": true
+                    }
+                },
+                {
+                    "className": "flex-1",
+                    "key": "age",
+                    "type": "input",
+                    "templateOptions": {
+                        "type": "number",
+                        "label": "Age",
+                        "required": true
+                    }
+                },
+                {
+                    "className": "flex-1",
+                    "key": "age4",
+                    "type": "input",
+                    "templateOptions": {
+                        "type": "number",
+                        "label": "Age",
+                        "required": true
+                    }
+                }
+            ]
         },
         {
-          "className": "flex-1",
-          "key": "age",
-          "type": "input",
-          "templateOptions": {
-            "type": "number",
-            "label": "Age",
-            "required": true
-          }
+            "templateOptions": {
+                "label": "Bestellen"
+            },
+            "fieldGroup": [
+                {
+                    "key": "country",
+                    "type": "input",
+                    "templateOptions": {
+                        "label": "Country",
+                        "required": true
+                    }
+                }
+            ]
         },
         {
-          "className": "flex-1",
-          "key": "age",
-          "type": "input",
-          "templateOptions": {
-            "type": "number",
-            "label": "Age",
-            "required": true
-          }
-        }
-      ]
-    },
-    {
-      "templateOptions": {
-        "label": "Bestellen"
-      },
-      "fieldGroup": [
+            "templateOptions": {
+                "label": "Hauptanschrift"
+            },
+            "fieldGroup": [
+                {
+                    "key": "day",
+                    "type": "input",
+                    "templateOptions": {
+                        "label": "Day of the trip",
+                        "required": true
+                    }
+                }
+            ]
+        },
         {
-          "key": "country",
-          "type": "input",
-          "templateOptions": {
-            "label": "Country",
-            "required": true
-          }
-        }
-      ]
-    },
-    {
-      "templateOptions": {
-        "label": "Hauptanschrift"
-      },
-      "fieldGroup": [
+            "templateOptions": {
+                "label": "Rechnungsanschrift"
+            },
+            "fieldGroup": [
+                {
+                    "key": "day",
+                    "type": "input",
+                    "templateOptions": {
+                        "label": "Day of the trip",
+                        "required": true
+                    }
+                }
+            ]
+        },
         {
-          "key": "day",
-          "type": "input",
-          "templateOptions": {
-            "label": "Day of the trip",
-            "required": true
-          }
+            "templateOptions": {
+                "label": "Gruppe / Klasse"
+            },
+            "fieldGroup": [
+                {
+                    "key": "day",
+                    "type": "input",
+                    "templateOptions": {
+                        "label": "Day of the trip",
+                        "required": true
+                    }
+                }
+            ]
         }
-      ]
-    },
-    {
-      "templateOptions": {
-        "label": "Rechnungsanschrift"
-      },
-      "fieldGroup": [
-        {
-          "key": "day",
-          "type": "input",
-          "templateOptions": {
-            "label": "Day of the trip",
-            "required": true
-          }
-        }
-      ]
-    },
-    {
-      "templateOptions": {
-        "label": "Gruppe / Klasse"
-      },
-      "fieldGroup": [
-        {
-          "key": "day",
-          "type": "input",
-          "templateOptions": {
-            "label": "Day of the trip",
-            "required": true
-          }
-        }
-      ]
-    }
-  ]
+    ]
 }

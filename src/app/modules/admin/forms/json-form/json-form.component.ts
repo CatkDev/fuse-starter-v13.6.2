@@ -3,12 +3,6 @@ import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyJsonschema } from '@ngx-formly/core/json-schema';
 import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs/operators';
-
-export interface StepType {
-    label: string;
-    fields: FormlyFieldConfig[];
-}
 
 @Component({
   selector: 'app-json-form',
@@ -108,9 +102,7 @@ export class JsonFormComponent {
     loadExample(): any {
         this.jsonData = this.http.get<any>('assets/json-schema/stepperForm.json').subscribe((data) => {
             this.fields = [data];
-
             // this.fields = [this.formlyJsonschema.toFieldConfig(data)];
-            console.log(data);
         });
     }
 
